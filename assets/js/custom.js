@@ -125,7 +125,7 @@ $(document).ready(function(){
 
 });	
 	
-const form = document.getElementById('contactForm'); // Remplacez 'contactForm' par l'ID de votre formulaire
+const form = document.getElementById('contactForm'); 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
@@ -133,7 +133,8 @@ form.addEventListener('submit', (e) => {
     const name = form['name'].value;
     const email = form['email'].value;
     const subject = form['subject'].value;
-    const message = form['comment'].value;
+    const message = form['message'].value;
+	console.log("test booba")
 
     // Enregistrement des données dans Firestore
     const db = firebase.firestore();
