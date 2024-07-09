@@ -125,3 +125,31 @@ $(document).ready(function(){
 
 });	
 	
+const form = document.getElementById('contactForm'); // Remplacez 'contactForm' par l'ID de votre formulaire
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Empêche l'envoi par défaut du formulaire
+
+    // Récupération des valeurs du formulaire
+    const name = form['name'].value;
+    const email = form['email'].value;
+    const subject = form['subject'].value;
+    const message = form['comment'].value;
+
+    // Enregistrement des données dans Firestore
+    const db = firebase.firestore();
+    db.collection('contacts').add({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp() // Optionnel : timestamp de l'enregistrement
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        // Réinitialisation du formulaire après soumission
+        form.reset();
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+});
