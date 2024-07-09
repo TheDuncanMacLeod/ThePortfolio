@@ -13,7 +13,7 @@ const firebaseConfig = {
 	appId: "1:194820217287:web:5e4e41997ce2ad2e9861e2",
 	measurementId: "G-89H5X1VHTD"
   };
-  
+
 // Initialisation de Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = form['message'].value;
             
             // Exécution de reCAPTCHA pour obtenir le token
-            grecaptcha.execute('YOUR_SITE_KEY', { action: 'submit' }).then(function(token) {
+            grecaptcha.execute('6Ldr2gsqAAAAAGMF--7WI0mypycVrC1Cc50xL8wp', { action: 'submit' }).then(function(token) {
                 // Enregistrement des données dans Firebase Realtime Database
                 saveDataToFirebase(name, email, subject, message, token);
             });
