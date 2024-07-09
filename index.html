@@ -983,36 +983,6 @@
 	// Your web app's Firebase configuration
 	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    const recaptchaResponse = grecaptcha.getResponse();
-
-    if (!recaptchaResponse) {
-        alert('Please complete the reCAPTCHA');
-        return;
-    }
-
-    db.collection("messages").add({
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-        recaptchaResponse: recaptchaResponse
-    })
-    .then(function() {
-        alert('Message sent successfully!');
-        document.getElementById('contactForm').reset();
-        grecaptcha.reset();
-    })
-    .catch(function(error) {
-        console.error('Error sending message: ', error);
-        alert('Error sending message.');
-    });
-});
 grecaptcha.ready(function() {
         grecaptcha.execute('6Ldr2gsqAAAAAGMF--7WI0mypycVrC1Cc50xL8wp', {action: 'submit'}).then(function(token) {
             // Ajouter le token au formulaire
