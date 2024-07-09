@@ -1014,7 +1014,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     });
 });
 grecaptcha.ready(function() {
-        grecaptcha.execute('VOTRE_SITE_KEY', {action: 'submit'}).then(function(token) {
+        grecaptcha.execute('6Ldr2gsqAAAAAGMF--7WI0mypycVrC1Cc50xL8wp', {action: 'submit'}).then(function(token) {
             // Ajouter le token au formulaire
             var recaptchaResponse = document.getElementById('recaptchaResponse');
             recaptchaResponse.value = token;
