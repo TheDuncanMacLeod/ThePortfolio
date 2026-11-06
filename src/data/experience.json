@@ -1,0 +1,113 @@
+[
+  {
+    "id": "ouiquit-appl-2023",
+    "order": 0,
+    "period": "2023",
+    "role": "Développeur",
+    "company": "OuiQuit (application pour arrêter de fumer)",
+    "location": "Bordeaux",
+    "phase": "dev",
+    "details": [
+      {
+        "title": "Développement de modules en Flutter",
+        "text": "Création et optimisation de modules interactifs et conviviaux à l'aide du framework Flutter, garantissant une expérience utilisateur fluide et cohérente sur différentes plateformes."
+      },
+      {
+        "title": "Gestion de base de données Firebase",
+        "text": "Conception, implémentation et maintenance de bases de données Firebase, assurant la gestion efficace et sécurisée des données, ainsi que la synchronisation en temps réel pour une intégration transparente des fonctionnalités dans les applications mobiles et web."
+      }
+    ]
+  },
+  {
+    "id": "ouiquit-appl-2021",
+    "order": 1,
+    "period": "2021 – 2022",
+    "role": "Stagiaire",
+    "company": "OuiQuit (application pour arrêter de fumer)",
+    "location": "Bordeaux",
+    "phase": "dev",
+    "details": [
+      {
+        "title": "Stage de fin d'études en développement web",
+        "text": "Réalisation d'un stage de fin d'études axé sur le développement web, avec pour objectif principal d'acquérir une expérience pratique en concevant et en mettant en œuvre des solutions innovantes. J'ai collaboré sur des projets variés, contribuant à la création et à l'amélioration de fonctionnalités cruciales."
+      },
+      {
+        "title": "Apprentissage Flutter",
+        "text": "Engagement dans l'apprentissage approfondi du framework Flutter, en explorant ses fonctionnalités avancées pour développer des applications mobiles modernes et performantes. J'ai acquis une compréhension approfondie des principes fondamentaux de Flutter et des meilleures pratiques de développement."
+      },
+      {
+        "title": "Développement de modules en Flutter",
+        "text": "Création et optimisation de modules interactifs et conviviaux en utilisant Flutter, garantissant une expérience utilisateur fluide et intuitive sur différentes plateformes. J'ai contribué à la conception et à l'implémentation de fonctionnalités clés, en assurant la qualité et la robustesse des applications développées."
+      }
+    ]
+  },
+  {
+    "id": "nirbi-2017",
+    "order": 2,
+    "period": "2017 – 2018",
+    "role": "Chef de projet",
+    "company": "Nirbi",
+    "location": "Bordeaux",
+    "phase": "industrie",
+    "details": [
+      {
+        "title": "Accompagnement de l'entreprise",
+        "text": "J'ai apporté un soutien stratégique et opérationnel crucial à l'entreprise, en facilitant la mise en œuvre de plans d'action et en optimisant les processus internes. Mon rôle a consisté à analyser les besoins de l'entreprise, à proposer des solutions efficaces et à coordonner leur mise en œuvre."
+      },
+      {
+        "title": "Développement et suivi des projets",
+        "text": "J'ai été responsable de la conception, de la gestion et du suivi de projets variés. Cela incluait la planification des étapes du projet, la gestion des ressources nécessaires, et la coordination des équipes pour assurer le respect des délais et des objectifs définis."
+      },
+      {
+        "title": "Gestion du budget",
+        "text": "J'ai participé activement à l'élaboration, au suivi et à l'optimisation des budgets alloués aux projets et aux opérations de l'entreprise. Mon approche rigoureuse a permis de maintenir un contrôle financier efficace tout en maximisant les ressources disponibles."
+      },
+      {
+        "title": "Gestion des contacts clients et fournisseurs",
+        "text": "J'ai joué un rôle essentiel dans le maintien de relations professionnelles positives avec les clients et les fournisseurs. Cela impliquait la gestion proactive des communications, la résolution rapide des problèmes et la promotion d'une collaboration harmonieuse pour assurer la satisfaction et la fidélisation des partenaires commerciaux."
+      }
+    ]
+  },
+  {
+    "id": "constellium-2014",
+    "order": 3,
+    "period": "2014 – 2015",
+    "role": "Alternant Lean Management (Master 2)",
+    "company": "Constellium",
+    "location": "Issoire (63)",
+    "phase": "industrie",
+    "details": [
+      {
+        "title": "Lean management",
+        "text": "J'ai intégré les principes du Lean management dans mes pratiques professionnelles, visant à optimiser les processus en éliminant le gaspillage et en améliorant l'efficacité opérationnelle. J'ai participé à des initiatives de Kaizen et de gestion quotidienne pour améliorer continuellement la performance."
+      },
+      {
+        "title": "Accompagnement au changement",
+        "text": "J'ai joué un rôle clé dans l'accompagnement des équipes et des individus lors de périodes de changement organisationnel. J'ai facilité la communication, la formation et la mise en œuvre de nouvelles méthodes de travail pour assurer une transition fluide et réussie."
+      },
+      {
+        "title": "5S",
+        "text": "J'ai mis en œuvre la méthode 5S pour organiser efficacement les espaces de travail, en assurant la propreté, l'ordre, la standardisation et la discipline. Cela a contribué à améliorer la sécurité, la productivité et la satisfaction au travail au sein de l'organisation."
+      },
+      {
+        "title": "Management visuel",
+        "text": "J'ai développé et mis en place des systèmes de management visuel pour rendre les informations critiques rapidement accessibles et compréhensibles. Ces outils ont facilité la prise de décision rapide, amélioré la transparence et renforcé l'engagement des équipes."
+      },
+      {
+        "title": "Conception d'outils de visualisation des encours de production",
+        "text": "J'ai conçu des outils innovants de visualisation des encours de production, permettant une surveillance en temps réel et une optimisation des processus de fabrication. Ces outils ont contribué à réduire les délais de production et à améliorer la planification des ressources."
+      }
+    ]
+  },
+  {
+    "id": "carrefour-2012",
+    "order": 4,
+    "period": "2012",
+    "role": "Chef d'équipe (stage de Licence 3)",
+    "company": "Carrefour",
+    "location": "Roumanie",
+    "phase": "industrie",
+    "details": [],
+    "summary": "Stage de validation de licence 3 : augmenter les performances d'une équipe."
+  }
+]

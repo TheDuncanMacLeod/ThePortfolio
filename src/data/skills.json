@@ -1,0 +1,9 @@
+[
+  { "id": "front", "order": 0, "label": "Front-end", "skills": [
+    { "name": "HTML5", "level": 3 }, { "name": "CSS 3", "level": 3 },
+    { "name": "JavaScript", "level": 3 }, { "name": "React", "level": 1 } ] },
+  { "id": "back", "order": 1, "label": "Back-end", "skills": [
+    { "name": "MySQL", "level": 3 }, { "name": "PHP 7", "level": 2 }, { "name": "Symfony", "level": 2 } ] },
+  { "id": "mobile", "order": 2, "label": "Mobile", "skills": [
+    { "name": "Flutter", "level": 2 } ] }
+]

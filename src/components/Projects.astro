@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import FlowSimulator from './FlowSimulator';
+
+const items = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="section" id="projets">
+	<div class="wrap">
+		<header class="section__head" data-reveal>
+			<p class="section__index">03</p>
+			<h2 class="section__title">Projets</h2>
+		</header>
+
+		<div class="projects">
+			{items.map(({ data }) => (
+				<article class:list={['project', { 'project--feature': data.feature }]} data-reveal>
+					<p class="project__meta">{data.meta}</p>
+					<h3 class="project__title">{data.title}</h3>
+					<p class="project__text">{data.text}</p>
+					<ul class="tags">
+						{data.tags.map((tag) => <li>{tag}</li>)}
+					</ul>
+					{data.link && <a class="link" href={data.link.href}>{data.link.label}</a>}
+				</article>
+			))}
+		</div>
+
+		<div class="demo" id="simulateur">
+			<h3 class="demo__title">Poussé ou tiré : comparez en direct</h3>
+			<p class="demo__intro">
+				Deux lignes identiques reçoivent la même demande. La première produit dès qu'elle le peut, la seconde seulement quand l'aval a de la place. Réglez les paramètres et regardez ce qui s'accumule devant le goulot, encadré en orange.
+			</p>
+			<FlowSimulator client:visible />
+		</div>
+	</div>
+</section>

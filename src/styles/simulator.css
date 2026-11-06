@@ -1,0 +1,236 @@
+/* Simulateur de flux. Couleurs de séries validées (daltonisme et contraste)
+   sur les fonds clair et sombre : voir --series-push et --series-pull dans main.css. */
+
+.series-push { --series: var(--series-push); }
+.series-pull { --series: var(--series-pull); }
+
+.sim {
+	display: grid;
+	gap: 20px;
+	padding: clamp(16px, 2.6vw, 30px);
+	background: var(--bg-raised);
+	border-radius: var(--radius);
+}
+
+.sim__controls {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 18px 24px;
+}
+
+.sim-slider { display: grid; gap: 6px; }
+
+.sim-slider__label {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	font-size: .9rem;
+	font-weight: 600;
+}
+
+.sim-slider output {
+	font: 500 .78rem / 1.8 var(--font-mono);
+	color: var(--ink-soft);
+	white-space: nowrap;
+}
+
+.sim-slider input {
+	width: 100%;
+	height: 24px;
+	margin: 0;
+	accent-color: var(--accent);
+	cursor: pointer;
+}
+
+.sim__buttons {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
+
+.sim__buttons .btn { min-height: 44px; padding-block: 8px; }
+
+.sim__tick {
+	margin-left: auto;
+	font: 500 .8rem / 1.4 var(--font-mono);
+	color: var(--ink-soft);
+}
+
+.sim__lines { display: grid; gap: 16px; }
+
+.sim-line__title {
+	margin: 0 0 8px;
+	padding-left: 26px;
+	font: 600 1rem / 1.3 var(--font-display);
+	background: linear-gradient(var(--series), var(--series)) left center / 18px 2px no-repeat;
+}
+
+.sim-line__stations {
+	display: grid;
+	grid-template-columns: minmax(0, .8fr) repeat(4, minmax(0, 1.2fr));
+	gap: 8px;
+	align-items: end;
+}
+
+.sim-line__stations li {
+	display: grid;
+	gap: 6px;
+	min-width: 0;
+}
+
+.sim-station {
+	display: grid;
+	place-items: center;
+	min-height: 44px;
+	padding: 6px 4px;
+	background: var(--bg);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	font-size: .8rem;
+	font-weight: 600;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+
+.sim-station--bottleneck { border: 2px solid var(--accent); }
+.sim-station--end { border-style: dashed; }
+
+.sim-queue { display: grid; gap: 4px; }
+
+.sim-queue__blocks {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-end;
+	gap: 2px;
+	height: 38px;
+	overflow: hidden;
+}
+
+.sim-queue__blocks span {
+	width: 10px;
+	height: 10px;
+	background: var(--series);
+	border-radius: 2px;
+}
+
+.sim-queue__count {
+	font: 500 .75rem / 1.3 var(--font-mono);
+	color: var(--ink-soft);
+}
+
+.sim__results {
+	display: grid;
+	grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+	gap: clamp(16px, 3vw, 32px);
+	align-items: start;
+}
+
+.sim-chart {
+	position: relative;
+	min-width: 0;
+	margin: 0;
+}
+
+.sim-chart figcaption { font-size: .9rem; font-weight: 600; }
+/* width: 100% : avant l'hydratation, le graphique suit déjà la largeur disponible. */
+.sim-chart svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	touch-action: pan-y;
+}
+
+.sim-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 16px;
+	margin: 4px 0;
+	font-size: .8rem;
+	color: var(--ink-soft);
+}
+
+.sim-legend li {
+	padding-left: 24px;
+	background: linear-gradient(var(--series), var(--series)) left center / 18px 2px no-repeat;
+}
+
+.sim-grid { stroke: var(--line); stroke-width: 1; }
+.sim-axis { fill: var(--ink-soft); font: 400 11px var(--font-mono); }
+
+.sim-series {
+	fill: none;
+	stroke: var(--series);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.sim-direct { fill: var(--ink); font: 600 12px var(--font-body); }
+
+.sim-crosshair { stroke: var(--ink-soft); stroke-width: 1; }
+
+.sim-tooltip {
+	position: absolute;
+	top: 76px;
+	display: grid;
+	gap: 2px;
+	padding: 6px 10px;
+	background: var(--bg);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	font-size: .78rem;
+	color: var(--ink-soft);
+	pointer-events: none;
+}
+
+.sim-tooltip strong { color: var(--ink); }
+
+.sim-tooltip div {
+	padding-left: 18px;
+	background: linear-gradient(var(--series), var(--series)) left center / 12px 2px no-repeat;
+}
+
+.sim-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: .9rem;
+}
+
+.sim-table th,
+.sim-table td {
+	padding: 9px 0 9px 10px;
+	border-bottom: 1px solid var(--line);
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.sim-table thead th { font: 500 .75rem / 1.4 var(--font-mono); color: var(--ink-soft); }
+
+.sim-table tbody th {
+	padding-left: 0;
+	text-align: left;
+	font-weight: 500;
+	color: var(--ink-soft);
+}
+
+.sim-table tbody td { font-weight: 600; }
+
+@media (max-width: 900px) {
+	.sim__controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.sim__results { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 560px) {
+	.sim__controls { grid-template-columns: minmax(0, 1fr); }
+
+	.sim-line__stations { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+	.sim-station {
+		min-height: 40px;
+		padding-inline: 1px;
+		font-size: .58rem;
+		overflow-wrap: normal;
+	}
+	.sim-queue__blocks span { width: 7px; height: 7px; }
+}

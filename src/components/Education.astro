@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+
+const items = (await getCollection('education')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="section" id="formation">
+	<div class="wrap">
+		<header class="section__head" data-reveal>
+			<p class="section__index">05</p>
+			<h2 class="section__title">Formation</h2>
+		</header>
+
+		<ol class="studies">
+			{items.map(({ data }) => (
+				<li class:list={['study', { 'study--current': data.current }]} data-reveal>
+					<p class="study__year">{data.year}</p>
+					<h3 class="study__title">{data.title}</h3>
+					<p class="study__school">{data.school}</p>
+					{data.points.length > 0 && (
+						<ul class="study__list">
+							{data.points.map((point) => <li>{point}</li>)}
+						</ul>
+					)}
+				</li>
+			))}
+		</ol>
+	</div>
+</section>

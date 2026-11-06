@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+
+const items = (await getCollection('experience')).sort((a, b) => a.data.order - b.data.order);
+const firstIndustry = items.findIndex((item) => item.data.phase === 'industrie');
+---
+
+<section class="section" id="experience">
+	<div class="wrap">
+		<header class="section__head" data-reveal>
+			<p class="section__index">02</p>
+			<h2 class="section__title">Expérience</h2>
+		</header>
+
+		<ol class="flow">
+			{items.map(({ data }, index) => (
+				<Fragment>
+					{index === firstIndustry && (
+						<li class="flow__marker" data-reveal>
+							<span>Reconversion — Bac +2 développement web, AFPA, 2021</span>
+						</li>
+					)}
+					<li class:list={['flow__item', { 'flow__item--past': data.phase === 'industrie' }]} data-reveal>
+						<p class="flow__date">{data.period}</p>
+						<div class="flow__main">
+							<h3 class="flow__role">{data.role}</h3>
+							<p class="flow__org">{data.company} <span>{data.location}</span></p>
+							{data.summary && <p class="flow__text">{data.summary}</p>}
+							{data.details.length > 0 && (
+								<details class="more">
+									<summary>Voir le détail</summary>
+									<dl class="more__list">
+										{data.details.map((detail) => (
+											<div>
+												<dt>{detail.title}</dt>
+												<dd>{detail.text}</dd>
+											</div>
+										))}
+									</dl>
+								</details>
+							)}
+						</div>
+					</li>
+				</Fragment>
+			))}
+		</ol>
+	</div>
+</section>

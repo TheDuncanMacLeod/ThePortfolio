@@ -1,0 +1,58 @@
+[
+  {
+    "id": "formation-2012",
+    "order": 0,
+    "year": "2012",
+    "title": "DUT QLIO : Qualité, Logistique Industrielle et Organisation",
+    "school": "Université Bordeaux 1 · IUT de Bordeaux, site d'Agen",
+    "points": [
+      "Manager, coordonner et animer des équipes logistique et qualité.",
+      "Organiser des activités de production de biens ou de services.",
+      "Gérer les flux physiques et les flux d'information.",
+      "Piloter l'entreprise par la qualité."
+    ],
+    "current": false
+  },
+  {
+    "id": "formation-2013",
+    "order": 1,
+    "year": "2013",
+    "title": "Licence 3 : Ingénierie du management",
+    "school": "École Universitaire de Management IAE",
+    "points": [],
+    "current": false
+  },
+  {
+    "id": "formation-2015",
+    "order": 2,
+    "year": "2015",
+    "title": "Master 2 : Logistique Industrielle",
+    "school": "École Universitaire de Management IAE · IAE Clermont Auvergne",
+    "points": [
+      "Approfondissement des stratégies de gestion logistique dans le secteur industriel.",
+      "Optimisation des processus de production et de distribution.",
+      "Analyse des flux physiques et d'information au sein des entreprises.",
+      "Développement de compétences en gestion des stocks et des entrepôts.",
+      "Étude des nouvelles technologies et des systèmes d'information appliqués à la logistique.",
+      "Préparation à la gestion des crises logistiques et à la résolution de problèmes complexes."
+    ],
+    "current": false
+  },
+  {
+    "id": "formation-2021",
+    "order": 3,
+    "year": "2021",
+    "title": "Bac +2 : Développement web",
+    "school": "AFPA · Formation en remote",
+    "points": [
+      "Acquisition des compétences en développement web et mobile.",
+      "Maîtrise des langages de programmation front-end (HTML, CSS, JavaScript).",
+      "Utilisation de frameworks et bibliothèques populaires comme React.js et Vue.js.",
+      "Développement d'applications web responsives et adaptées aux différents supports.",
+      "Intégration de bases de données et développement back-end avec Node.js et MongoDB.",
+      "Gestion de projet et méthodologies de développement agile.",
+      "Apprentissage des bonnes pratiques de sécurité et d'optimisation des performances web."
+    ],
+    "current": true
+  }
+]

@@ -1,0 +1,51 @@
+---
+import { profile } from '../data/profile';
+---
+
+<section class="section contact" id="contact">
+	<div class="wrap">
+		<header class="section__head" data-reveal>
+			<p class="section__index">06</p>
+			<h2 class="section__title">Contact</h2>
+		</header>
+
+		<div class="contact__grid">
+			<div class="contact__direct" data-reveal>
+				<p class="contact__name">Gaël Razafintsalama</p>
+				<p class="contact__role">Développeur web et web mobile</p>
+				<p class="contact__note">{profile.availability}</p>
+
+				<a class="contact__big" href={`mailto:${profile.email}`}>{profile.email}</a>
+				<a class="contact__big" href={`tel:${profile.phone.replaceAll(' ', '')}`}>{profile.phone}</a>
+
+				<ul class="socials">
+					{profile.socials.map((social) => <li><a href={social.url} rel="noopener">{social.label}</a></li>)}
+				</ul>
+			</div>
+
+			<!-- GitHub Pages n'exécute aucun code serveur : le formulaire ouvre la messagerie du visiteur. -->
+			<form class="form" action={`mailto:${profile.email}`} method="post" enctype="text/plain" data-contact-form data-reveal>
+				<div class="form__row">
+					<div class="field">
+						<label for="name">Nom</label>
+						<input id="name" name="name" type="text" autocomplete="name" required>
+					</div>
+					<div class="field">
+						<label for="email">E-mail</label>
+						<input id="email" name="email" type="email" autocomplete="email" required>
+					</div>
+				</div>
+				<div class="field">
+					<label for="subject">Sujet</label>
+					<input id="subject" name="subject" type="text">
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="6" required></textarea>
+				</div>
+				<button class="btn btn--primary" type="submit">Envoyer</button>
+				<p class="form__hint">L'envoi ouvre votre messagerie avec le message prêt à partir.</p>
+			</form>
+		</div>
+	</div>
+</section>

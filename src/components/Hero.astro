@@ -1,0 +1,50 @@
+---
+import { profile } from '../data/profile';
+import { asset } from '../lib/url';
+---
+
+<section class="hero" id="accueil">
+	<div class="wrap">
+		<h1 class="hero__name">
+			<span class="hero__line">Gaël</span>
+			<span class="hero__line">Razafintsalama<span class="accent">.</span></span>
+		</h1>
+
+		<div class="hero__grid">
+			<div class="hero__intro">
+				<p class="hero__role">Développeur web et web mobile</p>
+				<p class="hero__pitch">De la supply chain au développement web, un parcours mené par la passion.</p>
+				<div class="hero__actions">
+					<a class="btn btn--primary" href={asset(profile.cvPath)} download>
+						Télécharger le CV
+						<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg>
+					</a>
+					<a class="btn btn--ghost" href="#contact">Me contacter</a>
+				</div>
+			</div>
+
+			<aside class="label" aria-label="Fiche de parcours">
+				<div class="label__photo">
+					<img src={asset('img/portrait.webp')}
+						srcset={`${asset('img/portrait-480.webp')} 480w, ${asset('img/portrait.webp')} 960w`}
+						sizes="(max-width: 700px) 40vw, 240px"
+						width="960" height="1200" alt="Gaël Razafintsalama en costume sombre et cravate bordeaux" fetchpriority="high">
+				</div>
+				<dl class="label__fields">
+					<div><dt>De</dt><dd>Supply chain</dd></div>
+					<div><dt>Vers</dt><dd>Développement web</dd></div>
+					<div><dt>Statut</dt><dd><span class="pulse" aria-hidden="true"></span>Ouvert aux opportunités</dd></div>
+					<div><dt>Zone</dt><dd>Bordeaux · Montpellier · Remote</dd></div>
+				</dl>
+				<div class="label__barcode" aria-hidden="true"></div>
+			</aside>
+		</div>
+	</div>
+
+	<div class="ticker" aria-hidden="true">
+		<div class="ticker__track">
+			<span>HTML5</span><span>CSS 3</span><span>JavaScript</span><span>PHP 7</span><span>MySQL</span><span>Symfony</span><span>React</span><span>Flutter</span>
+			<span>HTML5</span><span>CSS 3</span><span>JavaScript</span><span>PHP 7</span><span>MySQL</span><span>Symfony</span><span>React</span><span>Flutter</span>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import { profile } from '../data/profile';
+
+const groups = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+const levels = ['Intermédiaire', 'Confirmé', 'Avancé'];
+---
+
+<section class="section" id="competences">
+	<div class="wrap">
+		<header class="section__head" data-reveal>
+			<p class="section__index">04</p>
+			<h2 class="section__title">Compétences</h2>
+		</header>
+
+		<div class="skills">
+			{groups.map(({ data }, index) => (
+				<div class="skills__card" data-reveal>
+					<h3 class="skills__group">{data.label}</h3>
+					<ul class="skill-list">
+						{data.skills.map((skill) => (
+							<li class="skill">
+								<span>{skill.name}</span>
+								<span class="level" style={`--level: ${skill.level}`}>{levels[skill.level - 1]}</span>
+							</li>
+						))}
+					</ul>
+					{index === groups.length - 1 && (
+						<Fragment>
+							<h3 class="skills__group skills__group--next">Aussi utilisés en projet ou en formation</h3>
+							<ul class="tags">
+								{profile.otherTools.map((tool) => <li>{tool}</li>)}
+							</ul>
+						</Fragment>
+					)}
+				</div>
+			))}
+
+			<div class="skills__card" data-reveal>
+				<h3 class="skills__group">Langues</h3>
+				<ul class="skill-list">
+					{profile.languages.map((language) => (
+						<li class="skill">
+							<span>{language.name}</span>
+							<span class="level level--plain">{language.level}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<div class="skills__card skills__card--accent skills__card--wide" data-reveal>
+				<h3 class="skills__group">Soft skills</h3>
+				<ul class="soft">
+					{profile.softSkills.map((skill) => <li>{skill}</li>)}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

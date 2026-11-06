@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ouiquit", "order": 0, "feature": true,
+    "meta": "2021 – 2023 · Application mobile", "title": "OuiQuit",
+    "text": "Application pour arrêter de fumer. Création et optimisation de modules interactifs en Flutter, conception et maintenance des bases de données Firebase, avec synchronisation en temps réel.",
+    "tags": ["Flutter", "Firebase"]
+  },
+  {
+    "id": "simulateur", "order": 1,
+    "meta": "Démo interactive · Ci-dessous", "title": "Simulateur de flux",
+    "text": "Mon passé en logistique, en code : deux lignes de production comparées en direct pour montrer ce que le flux tiré change aux encours et aux délais.",
+    "tags": ["React", "TypeScript", "Vitest"],
+    "link": { "label": "Essayer le simulateur", "href": "#simulateur" }
+  },
+  {
+    "id": "portfolio", "order": 2,
+    "meta": "Site web · Ce site", "title": "ThePortfolio",
+    "text": "Ce portfolio : contenu typé avec Astro et TypeScript, tests unitaires et de bout en bout, déploiement automatique sur GitHub Pages par GitHub Actions.",
+    "tags": ["Astro", "TypeScript", "GitHub Actions"],
+    "link": { "label": "Voir le code sur GitHub", "href": "https://github.com/TheDuncanMacLeod/ThePortfolio" }
+  }
+]
